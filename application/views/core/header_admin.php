@@ -5,6 +5,7 @@
   <script src="<?= base_url('assets/')?>jquery-3.4.1.min.js"></script>
   <link rel="stylesheet" href="<?= base_url('assets/')?>bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=base_url('assets/')?>font-awesome/css/font-awesome.min.css">  
+  <link rel="stylesheet" href="<?=base_url('assets/')?>font-awesome/css/chart.min.css">  
   <link rel="stylesheet" href="<?= base_url('assets/')?>datatables/css/jquery.dataTables.min.css">
   <style type="text/css">
   	.main{
