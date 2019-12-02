@@ -1,8 +1,9 @@
+<div class="main float-right">
 <?= form_open_multipart();?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top row justify-content-end">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark row justify-content-end fixed-top" style="z-index: 2">
 	<div class="col-6 text-right"><button class="btn btn-light my-sm-0" type="submit">Simpan</button></div>
 </nav>
-<div style="background-color: #ededff; padding: 30px 0 50px; margin-top: 50px">
+<div style=" padding: 30px 0 50px; margin-top: 50px">
 <div class="container mt-2">
 <h3 class="mb-5 font-weight-bold">Tambah Data<br><small>Calon Ketua dan Wakil Ketua</small></h3>
 	<div class="card">  
@@ -90,3 +91,4 @@
 </div>
 </div>
 <?=form_close();?>
+</div>

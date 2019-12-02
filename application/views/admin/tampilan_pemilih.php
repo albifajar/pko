@@ -1,4 +1,3 @@
-<div class="side-bar float-left">sd</div>
 <div class="main float-right">
 	<div style="margin: 0px 10%">
 		<a href="<?=base_url('admin/')?>tambah_kode" class="btn btn-success my-3">Tambah</a>

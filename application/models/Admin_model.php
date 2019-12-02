@@ -101,13 +101,15 @@ class Admin_model extends CI_Model {
         }
     }
     public function dataStatistik(){
-    	$calon = $this->db->get("calon")
+    	$calon = $this->db->query("SELECT nama, jumlah_pemilih FROM calon")
     		 ->result_array();
+    	$data = array();
     	for ($i=0; $i < count($calon); $i++) { 
-			$calon[$i]['nama'] = explode('&&', $calon[$i]['nama']);
-			$calon[$i]['kelas'] = explode('&&', $calon[$i]['kelas']);
-			$calon[$i]['gambar'] = explode('&&', $calon[$i]['gambar']);
+			$data['nama'][$i] = implode(' dan ',explode('&&', $calon[$i]['nama']));
+			$data['jumlah_pemilih'][$i] = $calon[$i]['jumlah_pemilih'];		
     	}
-    	return $calon;
+    	$data['nama'] = implode(',', $data['nama']);
+    	$data['jumlah_pemilih'] = implode(',', $data['jumlah_pemilih']);
+    	return $data;
     }
 }

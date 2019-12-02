@@ -10,6 +10,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('core/header_admin');
+		$this->load->view('core/menu_admin');
 		$this->load->view('admin/dashboard');
 		$this->load->view('core/footer_admin');
 	
@@ -18,6 +19,7 @@ class Admin extends CI_Controller {
 	{
 		$data['data'] = $this->mydb->getPemilih();
 		$this->load->view('core/header_admin');
+		$this->load->view('core/menu_admin');
 		$this->load->view('admin/tampilan_pemilih', $data);
 		$this->load->view('core/footer_admin');
 	}
@@ -31,6 +33,7 @@ class Admin extends CI_Controller {
 		$data['kode'] = $this->mydb->createPemilih();
 		$data['allkode'] = implode(';', $data['kode']);
 		$this->load->view('core/header_admin');
+		$this->load->view('core/menu_admin');
 		$this->load->view('admin/tambah_kode', $data);
 		$this->load->view('core/footer_admin');
 	}
@@ -40,11 +43,24 @@ class Admin extends CI_Controller {
 		if($this->input->post()){
 			$this->mydb->tambahCalon();
 		}
-		$this->load->view('core/header_admin');		
+		$this->load->view('core/header_admin');	
+		$this->load->view('core/menu_admin');		
 		$this->load->view('admin/tambah_calon');
 		$this->load->view('core/footer_admin');
 	}
+	public function tampil_calon()
+	{
+		$this->load->view('core/header_admin');	
+		$this->load->view('core/menu_admin');
+		$this->load->view('core/footer_admin');
+	}
 	public function statistik(){
-		var_dump($this->mydb->dataStatistik());
+		$this->load->view('core/header_admin');
+		$this->load->view('core/menu_admin');
+		$this->load->view('admin/statistik', array('data' => $this->mydb->dataStatistik()));
+		$this->load->view('core/footer_admin');
+	}
+	public function keluar(){
+		redirect('login');
 	}
 }
