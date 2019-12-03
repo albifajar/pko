@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Des 2019 pada 15.00
+-- Generation Time: 03 Des 2019 pada 02.56
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `pko`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `akun`
+--
+
+CREATE TABLE `akun` (
+  `id_akun` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `lavel` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `akun`
+--
+
+INSERT INTO `akun` (`id_akun`, `username`, `password`, `lavel`) VALUES
+(1, 'admin', '123', 'admin');
 
 -- --------------------------------------------------------
 
@@ -267,6 +287,12 @@ INSERT INTO `pemilih` (`id_kode`, `kode_unik`, `status_kode`) VALUES
 --
 
 --
+-- Indexes for table `akun`
+--
+ALTER TABLE `akun`
+  ADD PRIMARY KEY (`id_akun`);
+
+--
 -- Indexes for table `calon`
 --
 ALTER TABLE `calon`
@@ -282,6 +308,11 @@ ALTER TABLE `pemilih`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `akun`
+--
+ALTER TABLE `akun`
+  MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `calon`
 --

@@ -4,8 +4,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller {
 	public function __construct(){
 		parent:: __construct();
-		$this->load->model('admin_model', 'mydb');
+		$this->load->library('session');
 		$this->load->helper('url');
+		$this->onSession();
+		$this->load->model('admin_model', 'mydb');
+	}
+	public function onSession(){
+		if(!$this->session->userdata('status')){
+			redirect('login');
+		}
 	}
 	public function index()
 	{
@@ -61,6 +68,7 @@ class Admin extends CI_Controller {
 		$this->load->view('core/footer_admin');
 	}
 	public function keluar(){
+		session_destroy();
 		redirect('login');
 	}
 }

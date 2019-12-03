@@ -6,6 +6,12 @@ class Admin_model extends CI_Model {
 		parent:: __construct();
 		$this->load->database();
 	}
+	public function confirmAccount(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$this->db->query("SELECT * FROM akun WHERE username='$username' AND password='$password'");
+		return $this->db->affected_rows();
+	}
 	//Mengambil data dari tabel pilih
 	public function getPemilih(){
 		$data = $this->db->query('SELECT kode_unik, status_kode FROM pemilih')

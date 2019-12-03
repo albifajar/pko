@@ -25,7 +25,7 @@
     20% {background-color: #121287;}
     30% {background-color: #121297;}
     40% {background-color: #1212a7;}
-    50% {background-color: #1212b7;}
+    50% {background-color: #4545b7;}
     60% {background-color: #1212c7;}
     70% {background-color: #1212b7;}
     80% {background-color: #1212a7;}
