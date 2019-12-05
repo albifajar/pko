@@ -6,12 +6,15 @@
 <div style=" padding: 30px 0 50px; margin-top: 50px">
 <div class="container mt-2">
 <h3 class="mb-5 font-weight-bold">Tambah Data<br><small>Calon Ketua dan Wakil Ketua</small></h3>
-	<div class="card">  
-		<div class="card-header">
-			<label><h5>Nomor Urut</h5></label>
-		</div>
+	<div class="card">
 	  <div class="card-body">
-		<input type="number" name="nomor" min="1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	  	<label for="nomor">Nomor Urut</label>
+		<input type="number" id="nomor" name="nomor" min="1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	  	<label for="gambar" class="mt-3">Gambar</label>
+		<div class="custom-file">
+		<input type="file" name="gambar_k" class="custom-file-input" id="gambar" aria-describedby="Gambar_kFile">
+			<label class="custom-file-label" for="gambar_k">Choose file</label>
+		</div>
 	  </div>
 	</div>
 	<div class="row my-4">
@@ -27,21 +30,6 @@
 				  </div>
 				  <input type="text" class="form-control" name="nama_k" aria-label="Sizing example input" aria-describedby="nama_k">
 				</div>
-				<div class="input-group mb-3">
-					  <div class="input-group-prepend">
-					    <span class="input-group-text" id="kelas_k">Kelas</span>
-					  </div>
-					  <input type="text" class="form-control" name="kelas_k" aria-label="Sizing example input" aria-describedby="kelas_k">
-				</div>
-				<div class="input-group mb-3">
-					  <div class="input-group-prepend">
-					    <span class="input-group-text" id="Gambar_kFile">Gambar</span>
-					  </div>
-					  <div class="custom-file">
-					    <input type="file" name="gambar_k" class="custom-file-input" id="gambar_k" aria-describedby="Gambar_kFile">
-					    <label class="custom-file-label" for="gambar_k">Choose file</label>
-					  </div>
-				</div>
 			  </div>
 			</div>
 		</div>
@@ -56,21 +44,6 @@
 				    <span class="input-group-text" id="nama_wk">Nama</span>
 				  </div>
 				  <input type="text" class="form-control" name="nama_wk" aria-label="Sizing example input" aria-describedby="nama_wk">
-				</div>
-				<div class="input-group mb-3">
-					  <div class="input-group-prepend">
-					    <span class="input-group-text" id="kelas_wk">Kelas</span>
-					  </div>
-					  <input type="text" class="form-control" name="kelas_wk" aria-label="Sizing example input" aria-describedby="kelas_wk">
-				</div>
-				<div class="input-group mb-3">
-					  <div class="input-group-prepend">
-					    <span class="input-group-text" id="Gambar_wkFile">Gambar</span>
-					  </div>
-					  <div class="custom-file">
-					    <input type="file" name="gambar_wk" class="custom-file-input" id="gambar_wk" aria-describedby="Gambar_kFile">
-					    <label class="custom-file-label" for="gambar_wk">Choose file</label>
-					  </div>
 				</div>
 			  </div>
 			 </div>

@@ -1,0 +1,111 @@
+       @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+      *{
+  margin: 0;
+  padding: 0;
+  
+}
+body{
+  font-family: 'Rubik', sans-serif;
+ 
+}
+
+#particles-js{
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  /*background-color: lightskyblue;*/
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+#particles-js::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  background-image: linear-gradient(120deg,rgba(0,0,0,0.2),rgba(0,0,0,0.9));
+  z-index: -1;
+}
+
+
+.login-box{
+  background-color: white;
+  border-radius: 7px;
+  padding: 7px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 2px solid #e0ebeb;
+}
+
+.login-box .logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  left: calc(50% - 50px);
+
+}
+
+.textbox{
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+  padding: 8px 0;
+  margin: 8px 0;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.textbox input{
+  width: 100%;
+  outline: none;
+  border:none;
+  border-bottom: 1px solid  #adadad;
+  z-index: -1;
+}
+
+
+.textbox span{
+  background-color: ;
+}
+.textbox span::after{
+  content: '';
+  color: #adadad;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background:#17a2b8;
+  margin-top: 8px;
+  top: 66.5%;
+  left:10px;
+  z-index: 1;
+  transition: .5s;
+}
+
+.focus + span::after{
+  width: 93%;
+}
+
+
+
+.btn1{
+  margin-top: 10px;
+  width: 100%;
+}
+
+.sign{
+  text-align: center;
+  padding-top: 10px;
+}
+@media (max-width:767px) {
+
+/*  .login-box{
+    width: 30%;
+    border: 2px solid #e0ebeb;
+  }*/
+
+  }

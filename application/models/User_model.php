@@ -24,8 +24,6 @@ class User_model extends CI_Model {
 			 ->result_array();
 		for ($i=0; $i < count($data); $i++) { 
 			$data[$i]['nama'] = explode('&&', $data[$i]['nama']);
-			$data[$i]['kelas'] = explode('&&', $data[$i]['kelas']);
-			$data[$i]['gambar'] = explode('&&', $data[$i]['gambar']);
 		}
 		return $data;
 	}

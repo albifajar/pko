@@ -74,20 +74,13 @@ class Admin_model extends CI_Model {
 		$nama[1] = $this->input->post('nama_wk');
 		$nama = implode('&&', $nama);
 
-		$kelas[0] = $this->input->post('kelas_k');
-		$kelas[1] = $this->input->post('kelas_wk');
-		$kelas = implode('&&', $kelas);
-
-		$gambar[0] = $this->do_upload('gambar_k');
-		$gambar[1] = $this->do_upload('gambar_wk');
-		$gambar = implode('&&', $gambar);
 		$array = array(
 			'nama' => $nama,
-			'kelas' => $kelas,
+			'kelas' => 'alfa',
 			'visi' => $this->input->post('visi'),
 			'misi' => $this->input->post('misi'),
 			'nomor' => $this->input->post('nomor'),
-			'gambar' => $gambar
+			'gambar' => $this->do_upload('gambar')
 		);
 		$this->db->insert('calon', $array);
 		return var_dump($array);
@@ -112,10 +105,11 @@ class Admin_model extends CI_Model {
     	$data = array();
     	for ($i=0; $i < count($calon); $i++) { 
 			$data['nama'][$i] = implode(' dan ',explode('&&', $calon[$i]['nama']));
-			$data['jumlah_pemilih'][$i] = $calon[$i]['jumlah_pemilih'];		
+			$data['nama'][$i] = "'".$data['nama'][$i]."'";
+			$data['jumlah_pemilih'][$i] = "'".$calon[$i]['jumlah_pemilih']."'";	
     	}
-    	$data['nama'] = implode(',', $data['nama']);
-    	$data['jumlah_pemilih'] = implode(',', $data['jumlah_pemilih']);
+    	$data['nama'] = implode(', ', $data['nama']);
+    	$data['jumlah_pemilih'] = implode(', ', $data['jumlah_pemilih']);
     	return $data;
     }
 }

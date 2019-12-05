@@ -11,8 +11,8 @@ class User extends CI_Controller {
 	public function index()
 	{
 		if($this->input->cookie('kode')){
-		$this->load->view('core/header_admin');
-			$this->load->view('user/pemilihan', array('data'=>$this->mydb->getCalon()));
+			$this->load->view('user/default', array('data'=>$this->mydb->getCalon()));
+			$this->load->view('core/footer');
 		}else{
 			redirect('user/login');
 		}
@@ -41,6 +41,7 @@ class User extends CI_Controller {
 			}
 			$this->load->helper('form');
 			$this->load->view('user/login', array('alert' => $script));
+			$this->load->view('core/footer');
 		}else{
 			redirect('user');	
 		}

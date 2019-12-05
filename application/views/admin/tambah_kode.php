@@ -1,4 +1,5 @@
-<div class="container">
+<div class="main float-right">
+	<div class="container">
 <?= form_open('admin/tambah_kode');?>
 <input type="hidden" name="codes" value="<?=$allkode?>">
 <button type="submit" class="btn btn-light my-3">Simpan</button>
@@ -18,7 +19,7 @@
 		</tr>
 	<?php endfor ?>
 </table>
-</div>
+</div></div>
 <script type="text/javascript" src="<?= base_url('assets/')?>bootstrap/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
   $(document).ready( function () {
