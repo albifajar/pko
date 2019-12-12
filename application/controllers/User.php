@@ -12,7 +12,6 @@ class User extends CI_Controller {
 	{
 		if($this->input->cookie('kode')){
 			$this->load->view('user/default', array('data'=>$this->mydb->getCalon()));
-			$this->load->view('core/footer');
 		}else{
 			redirect('user/login');
 		}
@@ -29,19 +28,18 @@ class User extends CI_Controller {
 					$cookie = array(
 					    'name'   => 'kode',
 					    'value'  => $this->input->post('kode'),
-					    'expire' => '86500'
+					    'expire' => '86500'	
 					);
 					$this->input->set_cookie($cookie);
 					redirect('user');
 				}elseif($this->mydb->cekKode() == 4){
-					$script = "<script>alert('kode yang anda masukan telah digunakan')</script>";
+					$script = "<script>Swal.fire({title: 'Peringatan',text: 'kode yang anda masukan telah digunakan', icon: 'warning', confirmButtonText: 'Baik', showClass: {popup: 'animated zoomIn faster'},hideClass: {popup: 'animated zoomOut faster'}});</script>";
 				}else{
-					$script = "<script>alert('kode yang anda masukan salah')</script>";
+					$script = "<script>Swal.fire({title: 'Kesalahan',text: 'kode yang anda masukan salah', icon: 'error', confirmButtonText: 'Baik', showClass: {popup: 'animated zoomIn faster'},hideClass: {popup: 'animated zoomOut faster'}});</script>";
 				}
 			}
 			$this->load->helper('form');
 			$this->load->view('user/login', array('alert' => $script));
-			$this->load->view('core/footer');
 		}else{
 			redirect('user');	
 		}

@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?=base_url()?>/assets/bootstrap/css/bootstrap.min.css">
+    <script src="<?=base_url()?>assets/jquery-3.4.1.min.js" ></script>
+    <link rel="stylesheet" href="<?=base_url()?>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/animate.css">
 
-    <link rel="stylesheet" href="<?=base_url()?>/assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="<?=base_url()?>assets/sweetalert2/sweetalert2.min.css">
+    <script src="<?=base_url()?>assets/sweetalert2/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>/assets/css/style.css">
     <style type="text/css">
 #particles-js::after{
@@ -109,6 +113,7 @@
     <title>pemilihan Log-in </title>
   </head>
   <body>
+    <?=$alert?>
     <?= form_open()?>
     <div id="particles-js">
       <div class="login-box shadow p-4 mb-5 bg-white rounded text-center">
@@ -117,7 +122,7 @@
        <div class="textbox">
          <div class="form-group">
            <label for="token" style="font-size: 12pt">Masukan Kode Dibawah</label>
-           <input type="text" name="kode" autocomplete="off" maxlength="8">
+           <input type="text" name="kode" autocomplete="off" maxlength="8" required>
            <span><!-- tong di hapus --></span>
          </div>
        </div>
@@ -126,3 +131,21 @@
      </div>
     </div>
     <?= form_close()?>
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="<?=base_url()?>/assets/bootstrap/pooper.min.js"></script>
+    <script src="<?=base_url()?>/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?=base_url()?>/assets/js/particles.min.js"></script>
+    <script src="<?=base_url()?>/assets/js/app.js"></script>
+    <script src="<?=base_url()?>/assets/js/script.js"></script>
+    
+    <script type="text/javascript">
+      $(".textbox input").focus(function(){
+        $(this).addClass("focus");
+        $(".textbox input").css("border-bottom","1px solid white");
+      });
+    </script>
+
+   
+  </body>
+</html>
